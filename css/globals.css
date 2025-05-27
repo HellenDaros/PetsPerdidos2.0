@@ -3,3 +3,85 @@ por exemplo o tipo de fonte, tamanhos da fonte, cores padrão, etc */
 
 /* para estilos que serão utilizados em pastas específicas, 
 criamos um novo arquivo com o mesmo nome da página */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+/* aqui importamos a fonte Poppins do Google Fonts */
+
+:root {
+    --cor-roxo-principal: #5E17EB;
+    /* Cor primária */
+
+    --cor-fundo-principal: #FFFFFF;
+    /* Cor de fundo principal (branco) */
+    --cor-fundo-secundaria: #D9D9D9;
+    /* Cor de fundo secundaria (cinza) */
+
+    --cor-texto-principal: #1E1E1E;
+    /* Cor do texto principal */
+    --cor-texto-secundario: #1E1E1EB3;
+    /* Cor do texto secundário (a mesma cor do texto principal, com menos opacidade) */
+
+    --font-family: 'Poppins', sans-serif;
+    /* Fonte padrão */
+    --font-light: 300;
+    /* Peso da fonte light */
+    --font-regular: 400;
+    /* Peso da fonte regular */
+    --font-semibold: 600;
+    /* Peso da fonte semibold */
+    --font-bold: 700;
+    /* Peso da fonte bold */
+    --font-extrabold: 800;
+    /* Peso da fonte extrabold */
+}
+
+html,
+body,
+p,
+h1,
+h2,
+h3,
+button,
+input,
+textarea {
+    font-family: var(--font-family);
+    font-weight: var(--font-regular);
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-principal);
+    margin: 0rem;
+    padding: 0rem;
+}
+
+* {
+    box-sizing: border-box;
+    /* esse estilo está sendo aplicado a todos os componentes, definindo que um componente filho 
+    jamais poderá ultrapassar o tamanho de um componente pai*/
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--cor-roxo-principal);
+    width: 100%;
+    font-weight: var(--font-bold);
+    padding: 0rem 4rem;
+
+
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    
+    gap: 4rem;
+
+    li a {
+        color: var(--cor-fundo-principal);
+
+        text-decoration: none;
+
+
+    }
+
+}
