@@ -7,6 +7,10 @@ criamos um novo arquivo com o mesmo nome da página */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 /* aqui importamos a fonte Poppins do Google Fonts */
 
+/* Abaixo importaremos todos os arquivos css, assim, não há necessidade de ficar importando arquivos diferentes em cada pasta, 
+basta importar este arquivo (globals) que será utilizado em todas as páginas, abrangendo todos os estilos*/
+@import '../css/navbar.css';
+
 :root {
     --cor-roxo-principal: #5E17EB;
     /* Cor primária */
@@ -58,30 +62,3 @@ textarea {
     jamais poderá ultrapassar o tamanho de um componente pai*/
 }
 
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--cor-roxo-principal);
-    width: 100%;
-    font-weight: var(--font-bold);
-    padding: 0rem 4rem;
-
-
-}
-
-.navbar ul {
-    display: flex;
-    list-style: none;
-    
-    gap: 4rem;
-
-    li a {
-        color: var(--cor-fundo-principal);
-
-        text-decoration: none;
-
-
-    }
-
-}

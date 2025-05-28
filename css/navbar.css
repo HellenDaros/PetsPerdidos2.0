@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--cor-roxo-principal);
+    width: 100%;
+    font-weight: var(--font-semibold);
+    padding: 0.5rem 2rem;
+
+
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    
+    gap: 4rem;
+    padding-right: 6rem;
+
+    li a {
+        color: var(--cor-fundo-principal);
+
+        text-decoration: none;
+
+
+    }
+
+}
