@@ -1,0 +1,30 @@
+.banner-content{
+    display: grid;
+    grid-template-columns: 60% 40%; ;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3rem;
+
+}
+
+.banner-content h1 {
+    font-size: 3rem;
+    font-weight: var(--font-extrabold);
+    display: flex;
+    flex-direction: column;
+
+    padding-bottom: 1rem;
+    line-height: 4rem;
+   
+}
+
+.subtitulo{
+    font-size: 1.25rem ;
+    font-weight: var(--font-regular);
+    color: var(--cor-texto-secundario);
+    margin-bottom: 2rem;
+    
+
+    display: flex;
+    flex-direction: column;
+}

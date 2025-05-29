@@ -10,6 +10,7 @@ criamos um novo arquivo com o mesmo nome da página */
 /* Abaixo importaremos todos os arquivos css, assim, não há necessidade de ficar importando arquivos diferentes em cada pasta, 
 basta importar este arquivo (globals) que será utilizado em todas as páginas, abrangendo todos os estilos*/
 @import '../css/navbar.css';
+@import '../css/banner.css';
 
 :root {
     --cor-roxo-principal: #5E17EB;
@@ -62,3 +63,11 @@ textarea {
     jamais poderá ultrapassar o tamanho de um componente pai*/
 }
 
+main {
+    width: 100%;
+    padding: 2rem 6rem;
+}
+
+.texto-destaque {
+    color: var(--cor-roxo-principal);
+}
