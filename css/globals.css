@@ -14,7 +14,10 @@ basta importar este arquivo (globals) que será utilizado em todas as páginas, 
 
 :root {
     --cor-roxo-principal: #5E17EB;
+    
     /* Cor primária */
+
+    --cor-roxo-secundario: #8696FE;
 
     --cor-fundo-principal: #FFFFFF;
     /* Cor de fundo principal (branco) */
@@ -65,7 +68,56 @@ textarea {
 
 main {
     width: 100%;
-    padding: 2rem 6rem;
+    height: 100%;
+    padding: 1rem 6rem;
+}
+
+button {
+
+    border: none;
+    font-size: 1rem;
+    color: var(--cor-fundo-principal);
+    font-weight: var(--font-semibold);
+    padding: 0.8rem 1rem;
+
+    border-radius: 5px;
+    
+}
+
+button:hover {
+
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.btn-primary {
+  background-color: var(--cor-roxo-principal);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #5a0cc2;
+}
+
+.btn-secondary {
+  background-color: #e4e0ff;
+  color: var(--cor-roxo-principal);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #d0c6ff;
 }
 
 .texto-destaque {
