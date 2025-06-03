@@ -1,57 +1,145 @@
-.banner {
-  /* background: linear-gradient(135deg, #ffffff, #f3edff, #edf1ff); */
-  padding: 0rem 4rem;
-  border-radius: 16px;
-  transition: background 0.5s ease-in-out;
+/* Animação de entrada da seção pelo lado esquerdo */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
+/* Container principal com background mais sóbrio e neutro */
+.banner-container {
+  width: 100%;
+ /* background: linear-gradient(135deg, #f3f4f6, #e0f2f1, #fefefe);  tons neutros azulados e esverdeados */
+  padding: 0rem 4rem;
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+.banner {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 0;
+  transition: background 0.6s ease-in-out;
+}
+
+/* Layout em grid, mantendo equilíbrio visual */
 .banner-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
   align-items: center;
   justify-content: space-between;
   justify-items: center;
-  /* max-width: 1200px; */
-  margin: 0 auto;
   gap: 4rem;
 }
 
-.banner-text{
+/* Bloco de texto com flexbox vertical */
+.banner-text {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
+/* Título com peso e impacto */
 .banner-text h1 {
   font-size: clamp(2.25rem, 5vw, 3.5rem);
-  font-weight: var(--font-extrabold);
+  font-weight: 800; /* substitui var(--font-extrabold) se não existir */
   line-height: 1.2;
   margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
+  color: #1f2937; /* cinza escuro para mais seriedade */
 }
 
+/* Subtítulo com texto explicativo mais sóbrio */
 .subtitulo {
   font-size: clamp(1rem, 2.5vw, 1.5rem);
-  font-weight: var(--font-regular);
-  color: var(--cor-texto-secundario);
+  font-weight: 400; /* substitui var(--font-regular) */
+  color: var(--cor-texto-secundario); /* cinza médio */
   margin-bottom: 2.5rem;
   display: flex;
   flex-direction: column;
 }
 
+/* Área dos botões */
 .banner-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-
-
-
+/* Estilo da imagem do banner */
 .banner-image {
   width: 100%;
   height: auto;
   margin-bottom: 2rem;
+  opacity: 0;
+  animation:
+    fadeInRight 0.4s ease-out forwards,
+    float 4s ease-in-out infinite;
+  animation-delay: 0.8s;
+  transition: transform 0.6s ease;
+}
 
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Aplicando animações de fade nos textos */
+.banner-text h1,
+.subtitulo {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.banner-text h1 {
+  animation-delay: 0.3s;
+}
+
+.subtitulo {
+  animation-delay: 0.6s;
+}
+
+/* Hover no banner com leve realce */
+.banner:hover {
+  background: linear-gradient(135deg, #eef2f7, #d8f3dc, #ffffff);
+}
+
+/* Hover da imagem com zoom leve */
+.banner-image:hover {
+  transform: scale(1.02);
 }
