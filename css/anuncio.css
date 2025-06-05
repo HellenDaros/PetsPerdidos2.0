@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+}
+
+header {
+  background-color: #6200ea;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.logo-pet {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 30px;
+}
+
+.form-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.titulo-com-seta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.icone-voltar {
+  color: #6200ea;
+  font-size: 28px;
+  text-decoration: none;
+}
+
+.icone-voltar:hover {
+  color: #4b00b5;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+.highlight {
+  color: #6200ea;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+input,
+textarea,
+.upload-box {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #eee;
+  resize: none;
+}
+
+textarea {
+  /*grid-column: 1 / -1;*/
+  height: 80px;
+}
+
+.upload-box {
+  /*grid-column: 1 / -1;*/
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-publicar {
+  margin-top: 20px;
+  padding: 12px;
+  width: 200px;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: flex-end;
+  font-weight: bold;
+}
+
+.btn-publicar:hover {
+  background-color: #4b00b5;
+}
