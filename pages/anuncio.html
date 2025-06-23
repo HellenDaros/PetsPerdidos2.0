@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criar Anúncio - Pets Perdidos</title>
+  <link rel="stylesheet" href="/PetsPerdidos2.0/css/anuncio.css" />
+  
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="/PetsPerdidos2.0/assets/images/logo-fungo-roxo.png" alt="Logo Pets Perdidos" class="logo-pet" />
+      <span>Pets Perdidos</span>
+    </div>
+    <nav>
+      <a href="/PetsPerdidos2.0/pages/home.html">Home</a>
+      <a href="/PetsPerdidos2.0/pages/meus-anuncios.html">Meus anúncios</a>
+      <a href="/PetsPerdidos2.0/pages/anuncio.html">Criar anúncio</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="form-container">
+      <div class="titulo-com-seta">
+        <a href="/PetsPerdidos2.0/pages/home.html" class="icone-voltar" title="Voltar para Home">
+          <i class="fa-solid fa-circle-arrow-left"></i>
+        </a>
+        <h2>Criar <span class="highlight">Anúncio</span></h2>
+      </div>
+
+      <form id="form-anuncio">
+        <div class="form-grid">
+          <input type="text" name="situacao" placeholder="Situação" required />
+          <input type="text" name="especie" placeholder="Espécie" required />
+          <input type="text" name="nome" placeholder="Nome do Pet" required />
+          <input type="text" name="raca" placeholder="Raça" />
+          <input type="text" name="sexo" placeholder="Sexo" />
+          <input type="text" name="cor" placeholder="Cor" />
+          <input type="tel" name="telefone" placeholder="Telefone para contato" required />
+          <input type="text" name="localizacao" placeholder="Última localização vista (s)" />
+          <textarea name="descricao" placeholder="Descrição"></textarea>
+          <div class="upload-box">Anexar imagem do pet</div>
+        </div>
+        <button type="submit" class="btn-publicar">Publicar Anúncio</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="/PetsPerdidos2.0/js/anuncio.js"></script>
+</body>
+</html>
