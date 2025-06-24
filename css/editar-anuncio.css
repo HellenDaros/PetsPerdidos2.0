@@ -48,11 +48,21 @@ main {
   margin: 0 auto;
 }
 
-.titulo {
+.titulo-com-seta {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 20px;
+}
+
+.icone-voltar {
+  color: #6200ea;
+  font-size: 28px;
+  text-decoration: none;
+}
+
+.icone-voltar:hover {
+  color: #4b00b5;
 }
 
 h2 {
@@ -99,6 +109,43 @@ textarea {
 }
 
 .btn-publicar {
+  margin-top: 20px;
+  padding: 12px;
+  width: 200px;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: flex-end;
+  font-weight: bold;
+}
+
+.btn-publicar:hover {
+  background-color: #4b00b5;
+}
+
+.button-group {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.btn-inativar {
+  background-color: #D9D9D9;
+  color: #1E1E1E;
+  margin-top: 20px;
+  padding: 12px;
+  width: 200px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: flex-end;
+  font-weight: bold;
+}
+
+.btn-salvar {
   margin-top: 20px;
   padding: 12px;
   width: 200px;
