@@ -126,9 +126,9 @@ textarea {
 }
 
 .button-group {
-  margin-top: 1rem;
+  margin-top: 16px;
   display: flex;
-  gap: 1rem;
+  gap: 16px;
   justify-content: flex-end;
 }
 
@@ -141,7 +141,7 @@ textarea {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  align-self: flex-end;
+  align-self: center;
   font-weight: bold;
 }
 
@@ -154,6 +154,6 @@ textarea {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  align-self: flex-end;
+  align-self: center;
   font-weight: bold;
 }
