@@ -1,0 +1,108 @@
+:root {
+    --cor-roxo-principal: #5e17eb;
+  
+    /* Cor primária */
+  
+    --cor-roxo-secundario: #8696fe;
+  
+    --cor-fundo-principal: #ffffff;
+    /* Cor de fundo principal (branco) */
+    --cor-fundo-secundaria: #d9d9d9;
+    /* Cor de fundo secundaria (cinza) */
+  
+    --cor-texto-principal: #1e1e1e;
+    /* Cor do texto principal */
+    --cor-texto-secundario: #1e1e1eb3;
+    /* Cor do texto secundário (a mesma cor do texto principal, com menos opacidade) */
+  
+    --font-family: "Poppins", sans-serif;
+    /* Fonte padrão */
+    --font-light: 300;
+    /* Peso da fonte light */
+    --font-regular: 400;
+    /* Peso da fonte regular */
+    --font-semibold: 600;
+    /* Peso da fonte semibold */
+    --font-bold: 700;
+    /* Peso da fonte bold */
+    --font-extrabold: 800;
+    /* Peso da fonte extrabold */
+  }
+  
+@import './modal-anuncio.css';
+.main-home {
+  padding: 0rem 4rem 4rem 4rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--cor-roxo-principal);
+  width: fit-content;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--cor-fundo-secundaria);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.info {
+  flex-grow: 1;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid #7a42f4;
+  border-radius: 999px;
+  padding: 0.15rem 0.75rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #7a42f4;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.status-text {
+  color: #555;
+  font-weight: bold;
+}
+
+.link {
+  color: #7a42f4;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+

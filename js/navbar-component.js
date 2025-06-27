@@ -4,14 +4,17 @@ const navbarContainer = document.getElementById('navbar-container');
 // Assim não tem necessidade de criar uma barra de navegação para cada tela e repetir o código
 function renderNavbar() {
     navbarContainer.innerHTML = `
-        <nav class="navbar">
-            <img width="37" height="37" src='../assets/images/logo-fungo-roxo.png'alt="Logo da Pets Perdidos com o desenho de um gato e um cachorro.">
-            <ul>
-                <li><a href="./home.html">Início</a></li>
-                <li><a href="./pages/criar-anuncio.html">Criar anúncio</a></li>
-                <li><a href="./pages/meus-anuncios.html">Meus anúncios</a></li>
-            </ul>
-        </nav>
+        <header>
+    <div class="logo">
+      <img src="/assets/images/logo-fungo-roxo.png" alt="Logo Pets Perdidos" class="logo-pet" />
+      <span>Pets Perdidos</span>
+    </div>
+    <nav>
+      <a href="/PetsPerdidos2.0/pages/home.html">Home</a>
+      <a href="/PetsPerdidos2.0/pages/meus-anuncios.html">Meus anúncios</a>
+      <a href="/PetsPerdidos2.0/pages/anuncio.html">Criar anúncio</a>
+    </nav>
+  </header>
     `;
 }
 renderNavbar();
