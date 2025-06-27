@@ -1,1 +1,53 @@
-<!-- tela para criar conta do usuário -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Criar uma conta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/criar-conta.css"/>
+</head>
+<body>
+  <div class="container">
+    <!-- Imagem da esquerda -->
+    <div class="left">
+      <img src="/assets/images/imagem_maior.jpg" alt="Mão segurando pata" />
+    </div>
+
+    <!-- Formulário à direita -->
+    <div class="right">
+      <div class="form-box">
+        <a href="./login.html" class="voltar">
+          <ion-icon name="arrow-back-circle"></ion-icon>
+        </a>
+
+        <h2>Cadastro de <span>Conta</span></h2>
+
+        <form>
+          <input type="text" placeholder="Nome Completo" />
+          <input type="email" placeholder="E-mail" />
+          <input type="tel" placeholder="Fone" />
+          <input type="text" placeholder="Logradouro" />
+          <input type="text" placeholder="Cidade" />
+
+          <div class="row">
+            <input type="text" placeholder="UF" />
+            <input type="text" placeholder="CEP" />
+          </div>
+
+          <input type="password" placeholder="Definir Senha" />
+
+          <div class="upload">
+            <label>Adicione sua foto de perfil aqui</label>
+          </div>
+
+          <button type="submit">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
