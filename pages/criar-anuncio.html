@@ -5,6 +5,183 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pets Perdidos</title>
   <link rel="stylesheet" href="/css/editar-anuncio.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+    }
+
+    .form-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .titulo-com-seta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .titulo-com-seta h2 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    .highlight {
+      color: #6c63ff;
+    }
+
+    .icone-voltar {
+      font-size: 1.5rem;
+      color: #6c63ff;
+      text-decoration: none;
+    }
+
+    .form-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .form-grid > * {
+      flex: 1 1 48%;
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      background-color: #fff;
+      width: 100%;
+    }
+
+    textarea {
+      flex: 1 1 100%;
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .upload-box {
+      flex: 1 1 100%;
+      border: 2px dashed #aaa;
+      border-radius: 6px;
+      text-align: center;
+      padding: 1.2rem 1rem;
+      gap: 2rem;
+      cursor: pointer;
+      color: #555;
+      background-color: #fff;
+      transition: border-color 0.3s;
+      position: relative;
+    }
+
+    .upload-box:hover {
+      border-color: #6c63ff;
+    }
+
+    .upload-text {
+      display: block;
+      font-size: 1rem;
+      color: #555;
+      cursor: pointer;
+    }
+
+    .imagem-preview-area {
+     
+      text-align: left;
+    }
+
+    .file-info {
+      background-color: #f9f9f9;
+      border-radius: 6px;
+      padding: 0.6rem 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid #ddd;
+    }
+
+    .file-info span {
+      font-size: 0.95rem;
+      color: #333;
+      max-width: 70%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .file-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .file-actions button {
+      background-color: transparent;
+      border: none;
+      color: #6c63ff;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 0.3rem;
+      border-radius: 4px;
+    }
+
+    .file-actions button:hover {
+      background-color: #eeeaff;
+    }
+
+    .modal-preview {
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.75);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-preview img {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .close-preview {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    .btn-publicar {
+      margin-top: 2rem;
+      background-color: #6c63ff;
+      color: white;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .btn-publicar:hover {
+      background-color: #574fcf;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -29,16 +206,47 @@
 
       <form id="form-anuncio" class="form-anuncio">
         <div class="form-grid">
-          <input id="situacao" type="text" name="situacao" placeholder="Situação" required />
+          <select id="situacao" name="situacao" required>
+            <option value="">Selecione a situação</option>
+            <option value="Perdido">Pet Perdido</option>
+            <option value="Encontrado">Pet Encontrado</option>
+          </select>
+
           <input id="especie" type="text" name="especie" placeholder="Espécie" required />
           <input id="nome" type="text" name="nome" placeholder="Nome do Pet" required />
           <input id="raca" type="text" name="raca" placeholder="Raça" />
-          <input id="sexo" type="text" name="sexo" placeholder="Sexo" />
+
+          <select id="sexo" name="sexo">
+            <option value="">Selecione o sexo</option>
+            <option value="Macho">Macho</option>
+            <option value="Fêmea">Fêmea</option>
+          </select>
+
           <input id="cor" type="text" name="cor" placeholder="Cor" />
           <input id="telefone" type="tel" name="telefone" placeholder="Telefone para contato" required />
-          <input id="localizacao" type="text" name="localizacao" placeholder="Última localização vista (s)" />
+          <input id="localizacao" type="text" name="localizacao" placeholder="Última localização vista" />
           <textarea id="descricao" name="descricao" placeholder="Descrição"></textarea>
-          <div class="upload-box">Anexar imagem do pet</div>
+
+          <div class="upload-box" id="upload-box">
+            <label for="imagem" class="upload-text">📷 Anexar imagem do pet</label>
+            <input type="file" id="imagem" name="imagem" accept="image/*" style="display: none;" />
+
+            <div id="imagem-preview-area" class="imagem-preview-area" style="display: none;">
+              <div class="file-info">
+                <span id="nome-arquivo">nome-do-arquivo.jpg</span>
+                <div class="file-actions">
+                  <button type="button" id="btnVerImagem" title="Visualizar imagem"><i class="fa-solid fa-eye"></i></button>
+                  <button type="button" id="btnRemoverImagem" title="Remover imagem"><i class="fa-solid fa-trash"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal para visualização -->
+            <div id="modalPreview" class="modal-preview" style="display: none;">
+              <span class="close-preview">&times;</span>
+              <img id="imagem-ampliada" src="#" alt="Imagem ampliada" />
+            </div>
+          </div>
         </div>
 
         <div class="container-do-botao">
@@ -48,6 +256,82 @@
     </div>
   </main>
 
-  <script src="/PetsPerdidos2.0/js/anuncio.js"></script>
+  <script src="../js/navbar-component.js"></script>
+  <script>
+    const inputImagem = document.getElementById('imagem');
+    const previewArea = document.getElementById('imagem-preview-area');
+    const nomeArquivo = document.getElementById('nome-arquivo');
+    const imagemModal = document.getElementById('imagem-ampliada');
+    const uploadBox = document.getElementById('upload-box');
+
+    uploadBox.addEventListener('click', (e) => {
+      if (e.target.tagName !== 'BUTTON' && e.target.tagName !== 'I') {
+        inputImagem.click();
+      }
+    });
+
+    inputImagem.addEventListener('change', function () {
+      const file = this.files[0];
+      if (file) {
+        nomeArquivo.textContent = file.name;
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          imagemModal.src = e.target.result;
+          previewArea.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    document.getElementById('btnVerImagem').addEventListener('click', function (e) {
+      e.stopPropagation();
+      document.getElementById('modalPreview').style.display = 'flex';
+    });
+
+    document.querySelector('.close-preview').addEventListener('click', function () {
+      document.getElementById('modalPreview').style.display = 'none';
+    });
+
+    document.getElementById('btnRemoverImagem').addEventListener('click', function (e) {
+      e.stopPropagation();
+      inputImagem.value = '';
+      imagemModal.src = '#';
+      previewArea.style.display = 'none';
+    });
+
+    document.getElementById('btnSalvar').addEventListener('click', function () {
+      const imagemBase64 = imagemModal.src;
+      const imagemValida = imagemBase64 && imagemBase64 !== '#' ? imagemBase64 : null;
+
+      const anuncio = {
+        situacao: document.getElementById('situacao').value,
+        especie: document.getElementById('especie').value,
+        nome: document.getElementById('nome').value,
+        raca: document.getElementById('raca').value,
+        sexo: document.getElementById('sexo').value,
+        cor: document.getElementById('cor').value,
+        telefone: document.getElementById('telefone').value,
+        localizacao: document.getElementById('localizacao').value,
+        descricao: document.getElementById('descricao').value,
+        imagem: imagemValida
+      };
+
+      if (!anuncio.situacao || !anuncio.especie || !anuncio.nome || !anuncio.telefone) {
+        alert("Preencha todos os campos obrigatórios.");
+        return;
+      }
+
+      let anuncios = JSON.parse(localStorage.getItem('anuncios')) || [];
+      anuncios.push(anuncio);
+      localStorage.setItem('anuncios', JSON.stringify(anuncios));
+
+      alert('Anúncio salvo com sucesso!');
+      document.getElementById('form-anuncio').reset();
+      previewArea.style.display = 'none';
+      imagemModal.src = '#';
+      window.location.href = "/pages/home.html";
+    });
+  </script>
 </body>
 </html>

@@ -13,9 +13,9 @@ function renderBannerComponent(){
         <span>seu pet que sumiu ou pode ajudar outros tutores!</span>
       </h2>
       <div class="banner-buttons">
-        <button class="btn-primary">Perdi meu pet</button>
-        <button class="btn-primary">Achei um pet</button>
-        <button class="btn-secondary">Meus anúncios</button>
+        <a href="/pages/anuncio.html" class="btn-primary">Perdi meu pet</a>
+        <a href="/pages/anuncio.html" class="btn-primary">Achei um pet</a>
+
       </div>
     </div>
 
@@ -24,7 +24,7 @@ function renderBannerComponent(){
         class="banner-image"
         src="../assets/images/imagem-banner.png"
         alt="Ilustração de uma pessoa abraçando cachorro com coração acima"
-        height="450"
+        height="300"
       />
 
   </div>

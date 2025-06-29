@@ -10,9 +10,9 @@ function renderNavbar() {
       <span>Pets Perdidos</span>
     </div>
     <nav>
-      <a href="/PetsPerdidos2.0/pages/home.html">Home</a>
-      <a href="/PetsPerdidos2.0/pages/meus-anuncios.html">Meus anúncios</a>
-      <a href="/PetsPerdidos2.0/pages/anuncio.html">Criar anúncio</a>
+      <a href="/pages/home.html">Home</a>
+      <a href="/pages/meus-anuncios.html">Meus anúncios</a>
+      <a href="/pages/anuncio.html">Criar anúncio</a>
     </nav>
   </header>
     `;

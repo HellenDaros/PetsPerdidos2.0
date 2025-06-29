@@ -45,7 +45,7 @@
 
 /* Título com peso e impacto */
 .banner-text h1 {
-  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-size: 3rem;
   font-weight: 800; /* substitui var(--font-extrabold) se não existir */
   line-height: 1.2;
   margin-bottom: 1.5rem;
@@ -56,7 +56,7 @@
 
 /* Subtítulo com texto explicativo mais sóbrio */
 .subtitulo {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-size: 1.5rem;
   font-weight: 400; /* substitui var(--font-regular) */
   color: var(--cor-texto-secundario); /* cinza médio */
   margin-bottom: 2.5rem;
@@ -73,7 +73,7 @@
 
 /* Estilo da imagem do banner */
 .banner-image {
-  width: 100%;
+  width: 90%;
   height: auto;
   margin-bottom: 2rem;
   opacity: 0;
@@ -81,6 +81,13 @@
   animation-delay: 0.8s;
   transition: transform 0.6s ease;
 }
+a {
+
+
+  text-decoration: none;
+  font-weight: bold;
+}
+
 
 /* Animações */
 @keyframes fadeInUp {
